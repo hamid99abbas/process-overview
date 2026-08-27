@@ -22,33 +22,33 @@ function openDoc(doc, kind) {
   const entry = kind === 'sample' ? doc.sample : doc.workflow;
   if (!entry) return;
   const label = kind === 'sample' ? 'Sample Document' : 'Workflow Document';
-  const fileName = entry.file.split('/').pop();
+  const downloadFile = entry.raw || entry.file;
+  const fileName = downloadFile.split('/').pop();
   const docTitle = `${doc.ref ? doc.ref + ' · ' : ''}${doc.title}`;
   modalTitle.textContent = `${docTitle} — ${label}`;
   modalBody.innerHTML = '';
 
-  const viewUrl = entry.view || entry.file;
-  const isDocx = entry.type === 'docx';
-  const isXlsx = entry.type === 'xlsx';
-  const badgeClass = isDocx ? 'docx-badge' : isXlsx ? 'xlsx-badge' : 'docx-badge';
-  const badgeText = (entry.type || 'FILE').toUpperCase();
+  const viewUrl = entry.file;
+  const isPdf = entry.type === 'pdf';
+  const rawExt = downloadFile.split('.').pop().toUpperCase();
+  const badgeClass = rawExt === 'DOCX' ? 'docx-badge' : rawExt === 'XLSX' ? 'xlsx-badge' : 'docx-badge';
 
   const wrapper = document.createElement('div');
   wrapper.className = 'doc-viewer';
   wrapper.innerHTML = `
     <div class="viewer-toolbar">
       <div class="viewer-meta">
-        <span class="viewer-type-badge ${badgeClass}">${badgeText}</span>
+        <span class="viewer-type-badge ${badgeClass}">${rawExt} / PDF</span>
         <span class="viewer-filename">${fileName}</span>
       </div>
       <div class="viewer-actions">
-        <button class="viewer-open-tab fancy-action-btn" title="Open full executive document in a separate tab">
+        <button class="viewer-open-tab fancy-action-btn" title="Open full executive PDF document in a separate tab">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M6 2H3a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-3M9 2h5m0 0v5m0-5L8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Open in new tab</span>
         </button>
-        <a href="${entry.file}" download="${fileName}" class="viewer-download-btn fancy-download-btn">
+        <a href="${downloadFile}" download="${fileName}" class="viewer-download-btn fancy-download-btn">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1.5v9m0 0l-3.5-3.5m3.5 3.5l3.5-3.5M2 14h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Download Original</span>
+          <span>Download .${rawExt.toLowerCase()}</span>
         </a>
       </div>
     </div>
@@ -64,6 +64,7 @@ function openDoc(doc, kind) {
   modalBody.appendChild(wrapper);
   modalOverlay.hidden = false;
 }
+
 
 /* ── Priority badge helper ── */
 function priorityClass(p) {
