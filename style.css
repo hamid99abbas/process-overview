@@ -791,7 +791,34 @@ table.excel-table tr:hover td {
   background: rgba(16, 185, 129, 0.04);
 }
 
-/* Loading & Spinner */
+/* ── XLSX sheet_to_html output styling ── */
+.viewer-canvas-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+.viewer-canvas-scroll table td,
+.viewer-canvas-scroll table th {
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.viewer-canvas-scroll table th {
+  background: #151D2C;
+  color: var(--ink-dim);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.viewer-canvas-scroll table tr:hover td {
+  background: rgba(245, 197, 24, 0.04);
+}
+
 .viewer-loading {
   display: flex;
   flex-direction: column;

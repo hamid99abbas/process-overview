@@ -8,8 +8,8 @@
 */
 
 const COMPANY = {
-  name: "Al-Bunyan Group",
-  tagline: "How we take a project from brief to build",
+  name: "Meridian Construction",
+  tagline: "From brief to build, under one control system.",
 };
 
 const TEAMS = [
@@ -21,6 +21,13 @@ const TEAMS = [
     blurb: "Pre-construction document delivery — from development strategy through to technical design readiness.",
     documentCount: 74,
     sections: [
+      {
+        title: "📊 Pre-Construction Delivery Register",
+        documents: [
+          { ref: "REG-DWG", title: "Pre-Construction Design Register — Stage 1, 2 & 3 (Full Excel)", owner: "Meridian", priority: "Critical", sample: { file: "samples/Pre-Construction_Design_Register.xlsx", raw: "samples/Pre-Construction_Design_Register.xlsx", type: "xlsx" }, workflow: null },
+        ],
+      },
+
       {
         title: "A. Development Strategy and Investment Basis",
         documents: [
@@ -132,6 +139,12 @@ const TEAMS = [
     documentCount: 50,
     sections: [
       {
+        title: "📊 Pre-Construction Delivery Register",
+        documents: [
+          { ref: "REG-COM", title: "Pre-Construction Commercial Register — Stage 1, 2 & 3 (Full Excel)", owner: "Meridian", priority: "Critical", sample: { file: "samples/Pre-Construction_Commercial_Register.xlsx", raw: "samples/Pre-Construction_Commercial_Register.xlsx", type: "xlsx" }, workflow: null },
+        ],
+      },
+      {
         title: "A. Tender & Bid Baseline",
         documents: [
           { ref: "A-01", title: "Client ITT / Tender Documents (as issued)", owner: "Estimating", priority: "Critical", sample: null, workflow: null },
@@ -232,6 +245,12 @@ const TEAMS = [
     blurb: "Site execution, inspection, and handover — the documents that track how the build actually happens.",
     documentCount: 24,
     sections: [
+      {
+        title: "📊 Pre-Construction Delivery Register",
+        documents: [
+          { ref: "REG-CON", title: "Pre-Construction Construction Register — Stage 1, 2 & 3 (Full Excel)", owner: "Meridian", priority: "Critical", sample: { file: "samples/Pre-Construction_Construction_Register.xlsx", raw: "samples/Pre-Construction_Construction_Register.xlsx", type: "xlsx" }, workflow: null },
+        ],
+      },
       {
         title: "A. Mobilisation & Setup",
         documents: [
