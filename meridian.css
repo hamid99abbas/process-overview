@@ -2,6 +2,7 @@
    MERIDIAN CONSTRUCTION — Delivery Index
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 
 :root {
   --bg:      #0a0a0a;
@@ -687,8 +688,15 @@ body {
   color: var(--yellow);
   border: 1px solid rgba(245, 197, 24, 0.3);
   margin-left: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero, .dept-section { padding-left: 20px; padding-right: 20px; }
+  .reg-topbar, .stage-nav, .reg-body { padding-left: 20px; padding-right: 20px; }
+  .doc-row { grid-template-columns: 36px 120px 1fr; }
+  .dr-type { display: none; }
+  .dept-header { flex-direction: column; gap: 4px; }
+  .modal { width: 95vw; height: 85vh; border-radius: 10px; }
 }
+
 
