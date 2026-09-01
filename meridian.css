@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 58px;
-  padding-bottom: 46px;
+  padding-bottom: 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -62,25 +62,9 @@ body {
 }
 .logo-svg { height: 38px; width: auto; }
 
-.topbar-right { display: flex; align-items: center; gap: 7px; }
-
-.tbadge {
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 3px 9px;
-  border-radius: 4px;
-  background: rgba(255,255,255,0.07);
-  color: var(--txt3);
-  text-transform: uppercase;
-}
-.tbadge-red  { background: var(--red);  color: #fff; }
-.tbadge-dark { background: rgba(255,255,255,0.12); color: var(--txt2); }
-
 /* ── VIEW CONTAINER ─────────────────────── */
 #app { flex: 1; }
-.view { min-height: calc(100vh - 58px - 46px); }
+.view { min-height: calc(100vh - 58px); }
 
 /* ── HOME: HERO ─────────────────────────── */
 .hero {
