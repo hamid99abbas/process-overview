@@ -318,7 +318,9 @@ const DOCS_DATA = {
         "doc_highlighted": true,
         "purpose": "Scope & Design Cost Control",
         "owner": "Critical",
-        "type": "DCC"
+        "type": "DCC",
+        "file": "samples/c-05.pdf",
+        "raw": "samples/c-05.xlsx"
       },
       {
         "ref": "PC-C-009",
@@ -363,7 +365,9 @@ const DOCS_DATA = {
         "doc_highlighted": true,
         "purpose": "Cost Planning & Budget",
         "owner": "Critical",
-        "type": "COD"
+        "type": "COD",
+        "file": "samples/D-04.pdf",
+        "raw": "samples/D-04.docx"
       },
       {
         "ref": "PC-D-006",
@@ -957,7 +961,9 @@ const DOCS_DATA = {
         "doc_highlighted": true,
         "purpose": "Cost Planning & Budget",
         "owner": "High",
-        "type": "COD"
+        "type": "COD",
+        "file": "samples/D-05.pdf",
+        "raw": "samples/D-05.docx"
       },
       {
         "ref": "PC-D-008",
@@ -2132,7 +2138,9 @@ const DOCS_DATA = {
         "doc_highlighted": true,
         "purpose": "Structures the project by system, trade, package and deliverable.",
         "owner": "Client initially / Meridian post-appointment",
-        "type": "PEG"
+        "type": "PEG",
+        "file": "samples/1.06.pdf",
+        "raw": "samples/1.06.docx"
       },
       {
         "ref": "1.07",
